@@ -1,0 +1,22 @@
+body {
+    background-image: url('../images/background.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.brand1 {
+    font-family: 'Montez', cursive;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: blue;
+}
+
+.brand2 {
+    font-size: small;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.btn {
+    color: white;
+    background-color: blue;
+}
