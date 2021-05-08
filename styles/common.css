@@ -1,0 +1,16 @@
+.brand1 {
+    font-family: 'Montez', cursive;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: blue;
+}
+
+.brand2 {
+    font-size: small;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.signin {
+    color: white;
+    background-color: blue;
+}
