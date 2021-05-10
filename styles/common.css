@@ -14,3 +14,45 @@
     color: white;
     background-color: blue;
 }
+
+#signUpModal, #signInModal {
+    width: 30%;
+}
+
+.modal-title {
+    font-weight: lighter;
+    font-size: x-large;
+}
+
+label {
+    font-weight: bolder;
+}
+
+#signUp, #signIn {
+    width: 100vh;
+    background-color: #53c653;
+    color: white;
+    font-weight: bolder;
+}
+
+input[type=text], input[type=password]{
+    background-color: #f2f2f2;
+}
+
+#msg {
+    padding-top: 10px;
+    font-weight: bolder;
+    margin: 0;
+}
+
+#msg2 {
+    color: blue;
+}
+
+form {
+    margin: 0;
+}
+
+.footer {
+    padding-bottom: 0;
+}
