@@ -1,0 +1,91 @@
+.layout {
+    width: 100%;
+    padding-left: 5em;
+    padding-right: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading {
+    padding: 1em 0 1em 0;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.authName {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#authorName {
+    font-size: 1.3em;
+}
+
+#editBtn, #likeBtn, #commentBtn, #saveBtn {
+    background-color: #ff0066;
+    border: 0;
+    color: white;
+    width: 5.5em;
+    height: 2.2em;
+    box-shadow: 0 5px 8px #ff66a3;
+    font-size: small;
+}
+
+#commentBtn {
+    width: 7em;
+    height: 2.3em;
+}
+
+.postContent {
+    text-align: justify;
+    text-justify: auto;
+    margin-bottom: 1em;
+    font-size: 1em;
+    /* font-family: 'Roboto', sans-serif; */
+    margin-bottom: 3em;
+}
+
+.likeBox {
+    margin-bottom: 2em;
+    
+}
+
+#likeBtn {
+    margin-bottom: 10px;
+
+}
+
+#likeMsg {
+    font-size: small;
+}
+
+#inputComment {
+    background-color: #f2f2f2;
+    font-size: small;
+    margin-bottom: 1em;
+}
+
+.commentSection {
+    margin-bottom: 2em;
+}
+
+.singleComment {
+    height: 40px;
+    padding: 10px 10px 0 10px;
+    background-color: white;
+    align-content: center;
+    margin-bottom: 10px;
+}
+  
+#allComments{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: lightgrey;
+    width: 80%;
+    padding: 10px 10px 0 10px;
+}
