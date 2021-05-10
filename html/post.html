@@ -1,0 +1,156 @@
+<!DOCTYPE html5>
+<html>
+
+    <head>
+        <title>Post Details</title>
+
+        <!-- Bootstrap Link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <!-- TODO: Include Font Awesome file here -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <!-- TODO: Include Google Fonts file here -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montez&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="../styles/post.css">
+        <link rel="stylesheet" href="../styles/common.css">
+    </head>
+
+    <body>
+        <!-- Header of the Post page -->
+        <header>
+            <nav class="navbar navbar-light bg-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-brand mb-0 h1">
+                        <h2 class="brand1">ScriBBler</h2>
+                        <h6 class="brand2">Explore, Imagine, Create</h6>
+                    </div>
+        
+                    <div class="button d-flex gap-2">
+                        <button class="btn signin" data-toggle="modal" data-target="#signUP-modal" type="submit">Sign Up</button>
+                        <button class="btn signin" data-toggle="modal" data-target="#signIN-modal" type="submit">Sign In</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Layout for all Contents of Post page -->
+        <div class="layout">
+
+            <!-- Post Heading -->
+            <div class="heading">
+                <h3 class="titleText" id="postTitle"></h3>
+            </div>
+
+            <!-- Post AuthorName and Edit button -->
+            <div class="authName">
+                <p id="authorName"></p>
+                <button type="button" id="editBtn" onclick="editPost()">Edit  <i class="fas fa-edit"></i></button>
+            </div>
+
+            <!-- Post Blog Content -->
+            <div class="postContent">
+                <p id="postText"></p>
+            </div>
+
+            <!-- Like button -->
+            <div class="likeBox">
+                <button type="button" id="likeBtn"  onclick="postLiked()"><i class="fas fa-thumbs-up"></i>  Like</button><br>
+                <span id="likeMsg">Be the first one to like this!</span>
+            </div>
+
+            <!-- Comment Box and Comment button -->
+            <div class="commentSection">
+                <textarea class="form-control" id="inputComment" rows="3" placeholder="Leave a comment..."></textarea>
+                <button type="button" id="commentBtn" onclick="addComment(inputComment)">Comment</button><br>
+            </div>
+
+            <!-- Comments List -->
+            <div class="commentList">
+                <h6>All Comments</h6>
+                <div id="allComments"></div>
+            </div>
+        </div>
+
+        <!-- Modal for SignUp button -->
+        <div class="modal fade" id="signUP-modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="signUpModal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Get Started</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Enter your name" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userName1">Username</label>
+                                <input type="text" class="form-control" id="userName1" placeholder="Enter your username" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userPassword1">Password</label>
+                                <input type="password" class="form-control" id="userPassword1" placeholder="Enter your password" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
+                            </div>
+                            <br>
+                            <div class="modal-footer justify-content-center footer">
+                                <button type="submit" class="btn" id="signUp">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for SignIn button -->
+        <div class="modal fade" id="signIN-modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="signInModal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Welcome Back!</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="userName2" aria-required="true">Username</label>
+                                <input type="text" class="form-control" id="userName2" placeholder="Enter your username" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userPassword2">Password</label>
+                                <input type="password" class="form-control" id="userPassword2" placeholder="Enter your password" required>
+                            </div>
+                            <br>
+                            <div class="modal-footer justify-content-center footer">
+                                <button type="submit" class="btn" id="signIn">Sign In</button>
+                                <p id="msg">Not a member ? <a id="msg2" href="#" data-toggle="modal" data-target="#signUP-modal" data-dismiss="modal">Sign Up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../scripts/post.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    </body>
+</html>
