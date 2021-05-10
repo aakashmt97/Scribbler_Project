@@ -1,177 +1,271 @@
 <!DOCTYPE html5>
 <html>
 
-<head>
-    <title>All Posts</title>
+    <head>
+        <title>All Posts</title>
 
-    <!-- Bootstrap Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <!-- Bootstrap Link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- TODO: Include Font Awesome file here -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- TODO: Include Font Awesome file here -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <!-- TODO: Include Google Fonts file here -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Ubuntu+Mono&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/site.css">
-    <link rel="stylesheet" href="https://use.typekit.net/lfa5msk.css">
+        <!-- TODO: Include Google Fonts file here -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montez&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="../styles/postslist.css">
-    <link rel="stylesheet" href="../styles/common.css">
-</head>
+        <link rel="stylesheet" href="../styles/postslist.css">
+        <link rel="stylesheet" href="../styles/common.css">
+    </head>
 
-<body>
-    <!-- TODO: Include code for header here -->
-    <header>
-        <nav class="navbar navbar-light bg-transparent">
-            <div class="container-fluid">
-                <div class="navbar-brand mb-0 h1">
-                    <h2 class="brand1">ScriBBler</h2>
-                    <h6 class="brand2">Explore, Imagine, Create</h6>
-                </div>
-    
-                <div class="button d-flex gap-2">
-                    <button class="btn signin" data-toggle="modal" data-target="#signUP-modal" type="submit">Sign Up</button>
-                    <button class="btn signin" data-toggle="modal" data-target="#signIN-modal" type="submit">Sign In</button>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <body>
+        <!-- Header of the PostList page -->
+        <header>
+            <nav class="navbar navbar-light bg-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-brand mb-0 h1">
+                        <h2 class="brand1">ScriBBler</h2>
+                        <h6 class="brand2">Explore, Imagine, Create</h6>
+                    </div>
 
-    <div class="layout">
-        <div class="row justify-content-center">
-            <div class="col-md-6 cardView">
-                <div class="cardName">
-                    <p class="card-text">Srishti Gupta</p>
-                </div>
-                <div class="cardContent">
-                    <div class="title">
-                        <p class="titleText">‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</p>
-                        <span class="deleteBtn">
-                            <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fas fa-trash"></i>
-                        </span>
-                    </div>
-                    <div class="cardText">
-                        <p>Since JavaScript does not have any type-checking, 
-                            either of these keywords can be used to declare a variable of any type (datatype) in 
-                            JavaScript. Though all the three keywords are used for the same purpose, 
-                            they are different.</p>
-                    </div>
-                    <div class="footer">
-                        <i class="fas fa-ellipsis-h"></i>
+                    <div class="button d-flex gap-2">
+                        <button class="btn signin" data-toggle="modal" data-target="#signUP-modal" type="submit">Sign Up</button>
+                        <button class="btn signin" data-toggle="modal" data-target="#signIN-modal" type="submit">Sign In</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 cardView">
-                <div class="cardName">
-                    <p class="card-text">Colby Fayock</p>
+            </nav>
+        </header>
+
+        <!-- Layout for all PostList -->
+        <div class="layout">
+            <div class="row justify-content-center">
+
+                <!-- Post 1 -->
+                <div class="col-md-6 cardView" id="post1">
+                    <div class="cardName">
+                        <p class="card-text" id="name1">Srishti Gupta</p>
+                    </div>
+                    <div class="cardContent">
+                        <div class="title">
+                            <h5 class="titleText" id="cardHeading1">‘let’ me be a ‘const’(ant), not a ‘var’(iable)!</h5>
+                            <span class="deleteBtn">
+                                <!-- TODO: Include Font Awesome icon for delete icon here -->
+                                <i class="fas fa-trash" id="1" data-toggle="modal" data-target="#delete-modal" onclick="deleteCard(this.id)"></i>
+                            </span>
+                        </div>
+                        <div class="cardText">
+                            <p id="cardPara1">Since JavaScript does not have any type-checking, 
+                                either of these keywords can be used to declare a variable of any type (datatype) in 
+                                JavaScript. Though all the three keywords are used for the same purpose, 
+                                they are different.</p>
+                        </div>
+                        <div class="cardfooter">
+                            <span class="ellipsisBtn">
+                                <i class="fas fa-ellipsis-h" id="1" onclick="postDetails(this.id)"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cardContent">
-                    <div class="title">
-                        <p class="titleText">What is linting and how can it save you time?</p>
-                        <span class="deleteBtn">
-                            <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fas fa-trash"></i>
-                        </span>
+
+                <!-- Post 2 -->
+                <div class="col-md-6 cardView" id="post2">
+                    <div class="cardName">
+                        <p class="card-text" id="name2">Colby Fayock</p>
                     </div>
-                    <div class="cardText">
-                        <p>One of the biggest challenges in software development is time. 
-                            It’s something we can’t easily get more of, but linting can help us make the most 
-                            out of the time we have.</p>
+                    <div class="cardContent">
+                        <div class="title">
+                            <h5 class="titleText" id="cardHeading2">What is linting and how can it save you time?</h5>
+                            <span class="deleteBtn">
+                                <!-- TODO: Include Font Awesome icon for delete icon here -->
+                                <i class="fas fa-trash" id="2" data-toggle="modal" data-target="#delete-modal" onclick="deleteCard(this.id)"></i>
+                            </span>
+                        </div>
+                        <div class="cardText">
+                            <p id="cardPara2">One of the biggest challenges in software development is time. 
+                                It’s something we can’t easily get more of, but linting can help us make the most 
+                                out of the time we have.</p>
+                        </div>
+                        <div class="cardfooter">
+                            <span class="ellipsisBtn">
+                                <i class="fas fa-ellipsis-h" id="2" onclick="postDetails(this.id)"></i>
+                            </span>
+                        </div>
                     </div>
-                    <span class="footer">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </span>
                 </div>
-            </div>
-            <div class="col-md-6 cardView">
-                <div class="cardName">
-                    <p class="card-text">Yazeed Bzadough</p>
+
+                <!-- Post 3 -->
+                <div class="col-md-6 cardView" id="post3">
+                    <div class="cardName">
+                        <p class="card-text" id="name3">Yazeed Bzadough</p>
+                    </div>
+                    <div class="cardContent">
+                        <div class="title">
+                            <h5 class="titleText" id="cardHeading3">How to Get More Views on Your Tech Blog</h5>
+                            <span class="deleteBtn">
+                                <!-- TODO: Include Font Awesome icon for delete icon here -->
+                                <i class="fas fa-trash" id="3" data-toggle="modal" data-target="#delete-modal" onclick="deleteCard(this.id)"></i>
+                            </span>
+                        </div>
+                        <div class="cardText">
+                            <p id="cardPara3">If you're a developer with a Twitter account, you've already seen everyone and their 
+                                cat start a blog, YouTube channel, or Patreon. We all want to become stars, or at the 
+                                very least, a recognizable name in the industry.</p>
+                        </div>
+                        <div class="cardfooter">
+                            <span class="ellipsisBtn">
+                                <i class="fas fa-ellipsis-h" id="3" onclick="postDetails(this.id)"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cardContent">
-                    <div class="title">
-                        <p class="titleText">How to Get More Views on Your Tech Blog</p>
-                        <span class="deleteBtn">
-                            <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fas fa-trash"></i>
-                        </span>
+
+                <!-- Post 4 -->
+                <div class="col-md-6 cardView" id="post4">
+                    <div class="cardName">
+                        <p class="card-text" id="name4">Cedd Burge</p>
                     </div>
-                    <div class="cardText">
-                        <p>If you're a developer with a Twitter account, you've already seen everyone and their 
-                            cat start a blog, YouTube channel, or Patreon. We all want to become stars, or at the 
-                            very least, a recognizable name in the industry.</p>
+                    <div class="cardContent">
+                        <div class="title">
+                            <h5 class="titleText" id="cardHeading4">How to write easily describable code</h5>
+                            <span class="deleteBtn">
+                                <!-- TODO: Include Font Awesome icon for delete icon here -->
+                                <i class="fas fa-trash" id="4" data-toggle="modal" data-target="#delete-modal" onclick="deleteCard(this.id)"></i>
+                            </span>
+                        </div>
+                        <div class="cardText">
+                            <p id="cardPara4">When code is not describable using words, most people have to do some mental mapping 
+                                to turn it in to words. This wastes mental energy, and you run the risk of getting 
+                                the mapping wrong. Different people will map to different words, which leads to 
+                                confusion when discussing the code.</p>
+                        </div>
+                        <div class="cardfooter">
+                            <span class="ellipsisBtn">
+                                <i class="fas fa-ellipsis-h" id="4" onclick="postDetails(this.id)"></i>
+                            </span>
+                        </div>
                     </div>
-                    <span class="footer">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </span>
                 </div>
-            </div>
-            <div class="col-md-6 cardView">
-                <div class="cardName">
-                    <p class="card-text">Cedd Burge</p>
-                </div>
-                <div class="cardContent">
-                    <div class="title">
-                        <p class="titleText">How to write easily describable code</p>
-                        <span class="deleteBtn">
-                            <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fas fa-trash"></i>
-                        </span>
+
+                <!-- Post 5 -->
+                <div class="col-md-6 cardView" id="post5">
+                    <div class="cardName">
+                        <p class="card-text" id="name5">Srishti Gupta</p>
                     </div>
-                    <div class="cardText">
-                        <p>When code is not describable using words, most people have to do some mental mapping 
-                            to turn it in to words. This wastes mental energy, and you run the risk of getting 
-                            the mapping wrong. Different people will map to different words, which leads to 
-                            confusion when discussing the code.</p>
+                    <div class="cardContent">
+                        <div class="title">
+                            <h5 class="titleText" id="cardHeading5">Everything you should know about ‘module’ & ‘require’ in Node.js</h5>
+                            <span class="deleteBtn">
+                                <!-- TODO: Include Font Awesome icon for delete icon here -->
+                                <i class="fas fa-trash" id="5" data-toggle="modal" data-target="#delete-modal" onclick="deleteCard(this.id)"></i>
+                            </span>
+                        </div>
+                        <div class="cardText">
+                            <p id="cardPara5">Node.js treats each JavaScript file as a separate module. For instance, 
+                                if you have a file containing some code and this file is named xyz.js, 
+                                then this file is treated as a module in Node, and you can say that you’ve 
+                                created a module named xyz.</p>
+                        </div>
+                        <div class="cardfooter">
+                            <span class="ellipsisBtn">
+                                <i class="fas fa-ellipsis-h" id="5" onclick="postDetails(this.id)"></i>
+                            </span>
+                        </div>
                     </div>
-                    <span class="footer">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-6 cardView">
-                <div class="cardName">
-                    <p class="card-text">Srishti Gupta</p>
-                </div>
-                <div class="cardContent">
-                    <div class="title">
-                        <p class="titleText">Everything you should know about ‘module’ & ‘require’ in Node.js</p>
-                        <span class="deleteBtn">
-                            <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fas fa-trash"></i>
-                        </span>
-                    </div>
-                    <div class="cardText">
-                        <p>Node.js treats each JavaScript file as a separate module. For instance, 
-                            if you have a file containing some code and this file is named xyz.js, 
-                            then this file is treated as a module in Node, and you can say that you’ve 
-                            created a module named xyz.</p>
-                    </div>
-                    <span class="footer">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </span>
                 </div>
             </div>
         </div>
-    </div>
 
-    
-    
-    <!-- list of all posts starts here -->
-    <div>
-        <!-- TODO: Write code for delete post modal here -->
+        <!-- Modal for Delete Icon in post Cards -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered deleteModal" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="deleteText">Are you sure you want to delete the post ?</p>
+                        <div class="deleteFooter">
+                            <button type="button" data-dismiss="modal" class="btn" id="yesBtn" onclick="deletePost()">Yes</button>
+                            <button type="button" class="btn" data-dismiss="modal" id="noBtn">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    </div>
-    <!-- list of all posts ends here -->
+        <!-- Modal for SignUp button -->
+        <div class="modal fade" id="signUP-modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="signUpModal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Get Started</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Enter your name" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userName1">Username</label>
+                                <input type="text" class="form-control" id="userName1" placeholder="Enter your username" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userPassword1">Password</label>
+                                <input type="password" class="form-control" id="userPassword1" placeholder="Enter your password" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
+                            </div>
+                            <br>
+                            <div class="modal-footer justify-content-center footer">
+                                <button type="submit" class="btn" id="signUp">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-</body>
+        <!-- Modal for SignIn button -->
+        <div class="modal fade" id="signIN-modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="signInModal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Welcome Back!</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="userName2" aria-required="true">Username</label>
+                                <input type="text" class="form-control" id="userName2" placeholder="Enter your username" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userPassword2">Password</label>
+                                <input type="password" class="form-control" id="userPassword2" placeholder="Enter your password" required>
+                            </div>
+                            <br>
+                            <div class="modal-footer justify-content-center footer">
+                                <button type="submit" class="btn" id="signIn">Sign In</button>
+                                <p id="msg">Not a member ? <a id="msg2" href="#" data-toggle="modal" data-target="#signUP-modal" data-dismiss="modal">Sign Up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../scripts/postslist.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    </body>
 
 </html>
